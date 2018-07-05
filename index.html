@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>wylsc?</title>
+    <title>WYLSK?</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
+
 <body>
-<div>
-    <canvas id="canvas" width="1024" height="768" style="border: 1px solid #000000;"
-            @mousedown="onKeyDown($event)"
-            @mouseup="onKeyUp($event)"></canvas>
+
+<div id="greetings" class="centered" v-if="meta.visible">
+    <h1 class="centered" style="color: crimson">WOULD YOU LIKE SOME KITTENS???</h1><br>
+    <h1 class="centered" style="color: darkorange">GET READY!!!</h1><br>
+    <h2 class="centered" style="color: dodgerblue" @click="onClick">
+        (Pss, click me, bro)
+    </h2>
 </div>
+
+<canvas id="canvas"
+        class="centered"
+        v-if="meta.visible"
+        :width="meta.width"
+        :height="meta.height"
+        style="border: 2px solid dodgerblue"
+        @mousedown="onKeyDown($event)"
+        @mouseup="onKeyUp($event)">
+</canvas>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="index.js"></script>
+
 </body>
+
 </html>
